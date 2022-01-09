@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hive_examples1/example8/example8.dart';
+import 'package:hive_examples1/example7/example7.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Example8(),
+      home: const Example7(),
     );
   }
 }

@@ -32,31 +32,42 @@ class _Example7State extends State<Example7> {
       appBar: AppBar(
         title: Text('Registration'),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              TextField(
-                controller: usernameContr,
-                decoration: InputDecoration(hintText: 'username'),
-              ),
-              TextField(
-                controller: emailContr,
-                decoration: InputDecoration(hintText: 'email'),
-              ),
-              TextField(
-                controller: passwordContr,
-                decoration: InputDecoration(hintText: 'password'),
-              ),
-              SizedBox(height: 100),
-              TextButton(
-                onPressed: () {
-                  _signUp(context);
-                },
-                child: Text('Sign Up'),
-              ),
-            ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                TextField(
+                  controller: usernameContr,
+                  decoration: InputDecoration(hintText: 'username'),
+                ),
+                TextField(
+                  controller: emailContr,
+                  decoration: InputDecoration(hintText: 'email'),
+                ),
+                TextField(
+                  controller: passwordContr,
+                  decoration: InputDecoration(hintText: 'password'),
+                ),
+                SizedBox(height: 100),
+                TextButton(
+                  onPressed: () {
+                    _signUp(context);
+                  },
+                  child: Text('Sign Up'),
+                ),
+                SizedBox(height: 16),
+                Text('Agar oldin royxatdan o\'tgan bolsangiz buni bosing'),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => SignIn()));
+                  },
+                  child: Text('Sign in'),
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:hive_examples1/example8/todo.dart';
+import 'package:hive_examples1/example7/user_data_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import 'app/my_app.dart';
@@ -16,12 +16,13 @@ import 'app/my_app.dart';
 }*/
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   // await Hive.deleteBoxFromDisk('inventory_box');
   await Hive.initFlutter();
-  // if (!Hive.isAdapterRegistered(2)) {
-  Hive.registerAdapter(TodoAdapter());
-  // }
-  await Hive.openBox<Todo>('todo_box');
+  if (!Hive.isAdapterRegistered(4)) {
+    Hive.registerAdapter(UserDataAdapter());
+  }
+  await Hive.openBox<UserData>('user_data');
 
   runApp(const MyApp());
 }
